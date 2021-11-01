@@ -16,7 +16,7 @@ COPY --chown=newsboardapi:newsboardapi newsboard newsboard
 COPY --chown=newsboardapi:newsboardapi api api
 COPY --chown=newsboardapi:newsboardapi requirements.txt requirements.txt
 COPY --chown=newsboardapi:newsboardapi manage.py manage.py
-COPY --chown=newsboardapi:newsboardapi Procfile Procfile
+COPY --chown=newsboardapi:newsboardapi heroku.yml heroku.yml
 
 RUN pip install --no-cache-dir --user -r requirements.txt
 
