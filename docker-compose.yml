@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+
+  api:
+    build: .
+    image: newsboardapi
+    depends_on:
+      - db
+      - migrations
+    environment:
+      - PORT=8000
+    ports:
+      - "8000:8000"
+    command: bash -c "sleep 3 && python ./manage.py runserver 0.0.0.0:8000"
+
+  migrations:
+    build: .
+    image: newsboardapi
+    depends_on:
+      - db
+    command: bash -c "sleep 3 && python manage.py migrate --noinput"
+
+  db:
+    image: postgres
+    volumes:
+      - ../newsboarddb:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_DB: "newsboardapi"
+      POSTGRES_USER: "newsboardapi"
+      POSTGRES_PASSWORD: "Queeshoxuihie8ahbuuRoo7oogis7Fox"
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.10.34.0/28
