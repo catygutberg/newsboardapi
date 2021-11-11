@@ -9,9 +9,11 @@ Can be deployed locally using docker/docker-compose (API and PostgreSQL containe
 docker-compose up -d
 ```
 (in the root directory)
-API listens on 8000 port on localhost. PostgreSQL database located on docker volume (../newsboarddb). Custom DB can be specified using DATABASE_URL environment variable.
+
+API listens on 8000 port on localhost. 
+
+PostgreSQL database located on docker volume (../newsboarddb). Custom DB can be specified using DATABASE_URL environment variable.
 
 The test version of API is also deployed on Heroku at https://caty-news-board-api.herokuapp.com/api
-
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
