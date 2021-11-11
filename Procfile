@@ -1,1 +1,1 @@
-web: gunicorn 0.0.0.0:${PORT} newsboard.wsgi
+web: gunicorn -b 0.0.0.0:${PORT} newsboard.wsgi
